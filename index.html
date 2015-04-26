@@ -7,6 +7,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" type="text/css" href="./css/contents.css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+
+<script>
+if (!window.exports) window.exports = window;
+</script>
+
+<script type="text/javascript" src="Pokemon-Showdown/data/pokedex.js"></script>
+<script type="text/javascript" src="Pokemon-Showdown/data/learnsets-g6.js"></script>
+<script type="text/javascript" src="Pokemon-Showdown/data/moves.js"></script>
+<script type="text/javascript" src="Pokemon-Showdown/data/typechart.js"></script>
+<script type="text/javascript" src="Pokemon-Showdown/data/formats-data.js"></script>
+<script type="text/javascript" src="Pokemon-Showdown/data/abilities.js"></script>
+
+<script type="text/javascript" src="js/dictionary.js"></script>
+<script type="text/javascript" src="js/check.js"></script>
+
 
 <title>PokemonCheatSheet</title>
 </head>
@@ -15,6 +31,43 @@
 	</div>
 
 	<div class="contents">
+		<div class="desc-line">
+			<textarea class="inputNames" rows="1" cols="12"></textarea>
+			<div class="types">タイプ</div>
+			<div class="abilities">特性</div>
+			<div class="moves">先遅換帰痺火挑ア</div>
+			<div class="weightDamages">重Dm</div>
+		</div>
+		<div class="line">
+			<textarea class="inputNames" rows="6" cols="12"></textarea>
+			<div class="types"></div>
+			<div class="abilities"></div>
+			<div class="moves"></div>
+			<div class="weightDamages"></div>
+		</div>
+		<div class="desc-line">
+			<div class="names"></div>
+			<div class="typeChart">無炎水電草氷闘毒地飛超虫岩霊龍悪鋼妖</div>
+			<div class="baseStats">&nbsp;&nbsp;&nbsp;HP&nbsp;&nbsp;&nbsp;攻撃&nbsp;&nbsp;防御&nbsp;&nbsp;特攻&nbsp;&nbsp;特防&nbsp;&nbsp;素早&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;合計</div>
+		</div>
+		<div class="line">
+			<div class="names"></div>
+			<div class="typeChart"></div>
+			<div class="baseStats"></div>
+		</div>
+		<div class="desc-line">
+			<div class="overallTypeChart">無&nbsp;炎&nbsp;水&nbsp;電&nbsp;草&nbsp;氷&nbsp;闘&nbsp;毒&nbsp;地&nbsp;飛&nbsp;超&nbsp;虫&nbsp;岩&nbsp;霊&nbsp;龍&nbsp;悪&nbsp;鋼&nbsp;妖</div>
+		</div>
+		<div class="line">
+			<input type="button" class="check" value="チェック" onclick="submit()">
+			<div class="overallTypeChart">
+				<div class="desc-OverallTypeChart">弱点<br>抵抗<br>無効</div>
+				<div class="weakness"></div>
+				<div class="strength"></div>
+				<div class="invalid"></div>
+			</div>
+		</div>
+
 	</div>
 
 	<div class="footer">

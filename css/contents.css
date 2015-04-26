@@ -4,17 +4,191 @@ html {
 	height: 100%;
 }
 
-body{
+body {
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
-
-}
-
-body textarea {
+	background-color: #000000;
 	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
+	font-size: 1em;
 }
 
-textarea {
+textarea.inputNames {
 	resize: none;
+	float: left;
+	background-color: #ffffff;
+	margin: 0px 2px;
+	width: 130px;
+
+	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
+	font-size: 1em;
+}
+
+.line {
+	width: auto;
+	height: 150px;
+	padding: 2px;
+	margin: 2px;
+	clear : both;
+}
+
+.line > div {
+	border: thin solid #000000;
+	height: 9em;
+	float: left;
+	font-size: 1em;
+	padding: 2px;
+	margin: 0px 2px;
+}
+
+.desc-line:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+.desc-line {
+	min-height: 1px;
+}
+
+* html .desc-line {
+	height: 1px;
+	/*¥*//*/
+	height: auto;
+	overflow: hidden;
+	/**/
+}
+
+.desc-line  {
+	padding: 2px;
+	margin: 2px;
+}
+
+.desc-line > div {
+	/*border: thin solid #000000;*/
+	height: 1em;
+	float: left;
+	font-size: 1em;
+	padding: 2px;
+	margin: 0px 2px;
+	color: #d4d4d4 !important;
+}
+
+.desc-line > textarea.inputNames {
+	visibility: hidden;
+	height: 0.5em;
+}
+
+.desc-line > div.typeChart {
+	color: #5c8b8d !important;
+}
+
+.desc-line > div.baseStats {
+	color: #5ecb03 !important;
+}
+
+div.types {
+	color: #43a9d0;
+	width: 50px;
+}
+
+div.abilities {
+	color: #57d0d0;
+	width: 320px;
+}
+
+div.moves {
+	color: #989cd2;
+	width: 180px;
+}
+
+div.weightDamages {
+	color: #d4d4d4;
+	width: 50px;
+}
+
+div.names {
+	color: #57d0d0;
+	width: 124px;
+}
+
+div.typeChart {
+	width:  294px;
+}
+
+div.baseStats {
+	color: #57d0d0;
+	width: 320px;
+}
+div.baseStats div.sum {
+	color: #f2ab3e;
+	float: right;
+}
+
+div.overallTypeChart {
+	height: 4.5em;
+	width: 500px;
+	margin-left: 240px;
+}
+
+div.desc-line > div.overallTypeChart {
+	height: 1em;
+	width: 500px;
+	margin-left: 385px;
+	color: #57d0d0 !important;
+}
+
+div.desc-OverallTypeChart {
+	color: #57d0d0;
+	width: 50px;
+}
+
+
+div.overallTypeChart > div:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+div.overallTypeChart > div {
+	min-height: 1px;
+	float: left;
+}
+
+* html div.overallTypeChart > div {
+	height: 1px;
+	/*¥*//*/
+	height: auto;
+	overflow: hidden;
+	/**/
+}
+
+.overallTypeChartColor0 {
+	color: #244e00;
+	float: left;
+}
+
+.overallTypeChartColor1 {
+	color: #baf72c;
+	float: left;
+}
+
+.overallTypeChartColor2 {
+	color: #fffa28;
+	float: left;
+}
+
+.overallTypeChartColor3 {
+	color: #e12727;
+	float: left;
+}
+
+.check {
+	float: left;
+	font-size: 1em;
+	width: 100px;
 }
