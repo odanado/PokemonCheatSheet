@@ -1,16 +1,39 @@
 @charset "UTF-8";
 
-html {
+html, body {
 	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
 }
 
 body {
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
 	background-color: #000000;
 	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
 	font-size: 1em;
+}
+
+div.header { 
+	height: 120px;
+	width: 970px;
+	margin: auto;
+}
+
+div.contents {
+	position: relative;
+	min-height: 100%;
+	width: 970px;
+	margin: auto;
+}
+
+div.footer {
+	width: 970px;
+	margin: auto;
+}
+
+div.footer > p {
+	text-align: center;
+	color: #d4d4d4;
 }
 
 textarea.inputNames {
@@ -67,7 +90,7 @@ textarea.inputNames {
 }
 
 .desc-line > div {
-	/*border: thin solid #000000;*/
+	border: thin solid #000000;
 	height: 1em;
 	float: left;
 	font-size: 1em;
