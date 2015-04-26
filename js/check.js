@@ -1,3 +1,29 @@
+/*
+check.js
+
+Copyright (c) 2015 odan
+
+This software is released under the MIT License.
+http://opensource.org/licenses/mit-license.php
+
+
+Pokemon-Showdown
+
+The MIT License
+
+Copyright (c) 2011-2015 Guangcong Luo and other contributors
+http://pokemonshowdown.com/
+
+
+jQuery v1.11.2
+
+jquery.org/license
+
+(c) 2005, 2014 jQuery Foundation, Inc.
+
+*/
+
+
 function toId(str) {
 	return str.toLowerCase().replace(/[^a-z0-9]+/g, '');
 }
