@@ -12,7 +12,13 @@ body {
 	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
 	font-size: 1em;
 }
-
+div.container { /*親要素*/
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
 div.header { 
 	height: 120px;
 	width: 970px;
@@ -20,20 +26,20 @@ div.header {
 }
 
 div.contents {
-	position: relative;
-	min-height: 100%;
 	width: 970px;
 	margin: auto;
 }
 
 div.footer {
-	width: 970px;
-	margin: auto;
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	bottom: 0px;
 }
 
 div.footer > p {
-	text-align: center;
 	color: #d4d4d4;
+	text-align: center;
 }
 
 textarea.inputNames {
@@ -49,7 +55,6 @@ textarea.inputNames {
 
 .line {
 	width: auto;
-	height: 150px;
 	padding: 2px;
 	margin: 2px;
 	clear : both;
@@ -64,7 +69,7 @@ textarea.inputNames {
 	margin: 0px 2px;
 }
 
-.desc-line:after {
+.clearfix:after {
 	content: ".";
 	display: block;
 	clear: both;
@@ -72,11 +77,11 @@ textarea.inputNames {
 	visibility: hidden;
 }
 
-.desc-line {
+.clearfix {
 	min-height: 1px;
 }
 
-* html .desc-line {
+* html .clearfix {
 	height: 1px;
 	/*¥*//*/
 	height: auto;
@@ -150,17 +155,16 @@ div.baseStats div.sum {
 	float: right;
 }
 
-div.overallTypeChart {
+div.line > div.overallTypeChart {
 	height: 4.5em;
-	width: 500px;
+	width: 470px;
 	margin-left: 240px;
 }
 
 div.desc-line > div.overallTypeChart {
 	height: 1em;
-	width: 500px;
 	margin-left: 385px;
-	color: #57d0d0 !important;
+	color: #57d0d0;
 }
 
 div.desc-OverallTypeChart {
@@ -169,25 +173,8 @@ div.desc-OverallTypeChart {
 }
 
 
-div.overallTypeChart > div:after {
-	content: ".";
-	display: block;
-	clear: both;
-	height: 0;
-	visibility: hidden;
-}
-
 div.overallTypeChart > div {
-	min-height: 1px;
 	float: left;
-}
-
-* html div.overallTypeChart > div {
-	height: 1px;
-	/*¥*//*/
-	height: auto;
-	overflow: hidden;
-	/**/
 }
 
 .overallTypeChartColor0 {
