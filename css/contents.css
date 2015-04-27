@@ -53,7 +53,7 @@ textarea.inputNames {
 	float: left;
 	background-color: #ffffff;
 	margin: 0px 2px;
-	width: 130px;
+	width: 150px;
 
 	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
 	font-size: 1em;
@@ -130,7 +130,7 @@ div.types {
 
 div.abilities {
 	color: #57d0d0;
-	width: 320px;
+	width: 370px;
 }
 
 div.moves {
@@ -145,11 +145,11 @@ div.weightDamages {
 
 div.names {
 	color: #57d0d0;
-	width: 124px;
+	width: 144px;
 }
 
 div.typeChart {
-	width:  294px;
+	width:  344px;
 }
 
 div.baseStats {
@@ -164,12 +164,12 @@ div.baseStats div.sum {
 div.line > div.overallTypeChart {
 	height: 4.5em;
 	width: 470px;
-	margin-left: 240px;
+	margin-left: 308px;
 }
 
 div.desc-line > div.overallTypeChart {
 	height: 1em;
-	margin-left: 385px;
+	margin-left: 453px;
 	color: #57d0d0;
 }
 
