@@ -64,6 +64,17 @@ function submit() {
 	$(".line .baseStats").html(baseStats);
 	putOverallTypeChart(names);
 }
+$(function () {
+	$(".line .inputNames").keypress(function(e) {
+		if (e.which == 13) {
+			var names = $(".line .inputNames").val().split(/\n/);
+			if (names.length == 6) {
+				submit();
+				return false;
+			}
+		}
+	});
+});
 
 function putOverallTypeChart(names) {
 	var weakness = {};
@@ -87,7 +98,7 @@ function putOverallTypeChart(names) {
 	}
 
 	var obj = {0:"overallTypeChartColor0", 1:"overallTypeChartColor1", 2:"overallTypeChartColor2",  
-				3:"overallTypeChartColor3", 4:"overallTypeChartColor3", 5:"overallTypeChartColor3", 6:"overallTypeChartColor3"};
+	3:"overallTypeChartColor3", 4:"overallTypeChartColor3", 5:"overallTypeChartColor3", 6:"overallTypeChartColor3"};
 
 	var ret = "";
 
