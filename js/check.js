@@ -41,18 +41,24 @@ function submit() {
 	for(var i=0;i<names.length;i++) {
 		var id = toId(toEn(names[i]));
 		console.log(dictionary[id]);
+		if (BattlePokedex.hasOwnProperty(id)) {
+			for(var j=0;j<BattlePokedex[id]["types"].length;j++) {
+				types += dictionary[toId(BattlePokedex[id]["types"][j])];
+			}
 
-		for(var j=0;j<BattlePokedex[id]["types"].length;j++) {
-			types += dictionary[toId(BattlePokedex[id]["types"][j])];
+			
+			abilities += getAbility(id);
+			moves += getMove(id);
+			weightDamages += getWeightDamage(id);
+			typeChart += getTypeChart(id);
+			baseStats += getBaseStats(id);
 		}
-
-
 		types += "<br>";
-		abilities += getAbility(id) + "<br>";
-		moves += getMove(id) + "<br>";
-		weightDamages += getWeightDamage(id) + "<br>";
-		typeChart += getTypeChart(id) + "<br>";
-		baseStats += getBaseStats(id) + "<br>";
+		abilities =+ "<br>";
+		moves =+ "<br>";
+		weightDamages += "<br>";
+		typeChart += "<br>";
+		baseStats += "<br>";
 	}
 
 	$(".line .types").html(types);
@@ -165,6 +171,9 @@ function getEffect(id) {
 	var sortedTypes = ["Normal","Fire","Water","Electric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Rock","Ghost","Dragon","Dark","Steel","Fairy"];
 
 	var effects = {};
+	if (!BattlePokedex.hasOwnProperty(id)) {
+		return effects;
+	}
 	var types = BattlePokedex[id]["types"];
 	var abilities = BattlePokedex[id]["abilities"];
 
