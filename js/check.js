@@ -54,8 +54,8 @@ function submit() {
 			baseStats += getBaseStats(id);
 		}
 		types += "<br>";
-		abilities =+ "<br>";
-		moves =+ "<br>";
+		abilities += "<br>";
+		moves += "<br>";
 		weightDamages += "<br>";
 		typeChart += "<br>";
 		baseStats += "<br>";
