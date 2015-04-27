@@ -273,6 +273,11 @@ function getMove(id) {
 	}
 	learnset = BattleLearnsets[id]["learnset"];
 
+	while (BattlePokedex[id]["prevo"]) {
+		id = BattlePokedex[id]["prevo"];
+		$.extend(learnset, BattleLearnsets[id]["learnset"]);
+	}
+
 	var priorityMoves = ["aquajet", "bulletpunch", "extremespeed", "fakeout", "feint", "iceshard", "machpunch", "quickattack", "shadowsneak", "suckerpunch", "vacuumwave", "watershuriken"];
 
 	for (var i=0; i<priorityMoves.length; i++) {
