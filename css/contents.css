@@ -9,7 +9,7 @@ html, body {
 
 body {
 	background-color: #000000;
-	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
+	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif, 'Helvetica';
 	font-size: 1em;
 }
 div.container { /*親要素*/
