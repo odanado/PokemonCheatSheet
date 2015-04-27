@@ -37,6 +37,7 @@ function submit() {
 	var weightDamages = "";
 	var typeChart = "";
 	var baseStats = "";
+	var jaNames = "";
 
 	for(var i=0;i<names.length;i++) {
 		var id = toId(toEn(names[i]));
@@ -52,6 +53,7 @@ function submit() {
 			weightDamages += getWeightDamage(id);
 			typeChart += getTypeChart(id);
 			baseStats += getBaseStats(id);
+			jaNames += toJa(id);
 		}
 		types += "<br>";
 		abilities += "<br>";
@@ -59,13 +61,14 @@ function submit() {
 		weightDamages += "<br>";
 		typeChart += "<br>";
 		baseStats += "<br>";
+		jaNames += "<br>";
 	}
 
 	$(".line .types").html(types);
 	$(".line .abilities").html(abilities);
 	$(".line .moves").html(moves);
 	$(".line .weightDamages").html(weightDamages);
-	$(".line .names").html($(".line .inputNames").val().replace(/\n/g,"<br>"));
+	$(".line .names").html(jaNames);
 	$(".line .typeChart").html(typeChart);
 	$(".line .baseStats").html(baseStats);
 	putOverallTypeChart(names);
