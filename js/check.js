@@ -257,6 +257,11 @@ function getAbility(id) {
 
 function getMove(id) {
 	var ret = "";
+	if (id.match(/mega(x|y|)$/)) {
+		if (!BattleLearnsets.hasOwnProperty(id)) {
+			id = id.replace(/mega(x|y|)/,'');
+		}
+	}
 	learnset = BattleLearnsets[id]["learnset"];
 
 	var priorityMoves = ["aquajet", "bulletpunch", "extremespeed", "fakeout", "feint", "iceshard", "machpunch", "quickattack", "shadowsneak", "suckerpunch", "vacuumwave", "watershuriken"];
