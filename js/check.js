@@ -40,10 +40,10 @@ function submit() {
 
 	for(var i=0;i<names.length;i++) {
 		var id = toId(toEn(names[i]));
-		console.log(dictionary[id]);
+		console.log(toJa(id));
 		if (BattlePokedex.hasOwnProperty(id)) {
 			for(var j=0;j<BattlePokedex[id]["types"].length;j++) {
-				types += dictionary[toId(BattlePokedex[id]["types"][j])];
+				types += toJa(BattlePokedex[id]["types"][j], "type");
 			}
 
 			
@@ -214,7 +214,7 @@ function getTypeChart(id) {
 
 	for (var key in effects) {
 		if (effects.hasOwnProperty(key)) {
-			ret += "<font color=\"" + colors[effects[key]] + "\">"+ toJa(key) + "</font>";
+			ret += "<font color=\"" + colors[effects[key]] + "\">"+ toJa(key, "type") + "</font>";
 		}
 	}
 
@@ -233,16 +233,22 @@ function getWeightDamage(id) {
 	return ret.replace(/ /g, "&nbsp;");
 }
 
-function toJa(text) {
-	return dictionary[toId(text)];
+function toJa(text, category) {
+	category = category || "other"
+	text = toId(text);
+	for (var i=0; i<dictionary[category].length; i++) {
+		if (dictionary[category][i]["en"] == text) {
+			return dictionary[category][i]["ja"];
+		}
+	}
+	return "";
 }
 
-function toEn(text) {
-	for (var key in dictionary) {
-		if (dictionary.hasOwnProperty(key)) {
-			if(dictionary[key]==text) {
-				return key;
-			}
+function toEn(text, category) {
+	category = category || "other"
+	for (var i=0; i<dictionary[category].length; i++) {
+		if (dictionary[category][i]["ja"] == text) {
+			return dictionary[category][i]["en"];
 		}
 	}
 	return "";
@@ -254,7 +260,7 @@ function getAbility(id) {
 	var ability = BattlePokedex[id]["abilities"];
 	for (var key in ability) {
 		if (ability.hasOwnProperty(key)) {
-			var ja = dictionary[toId(ability[key])]
+			var ja = toJa(ability[key])
 			if (key != "H" || key == "H" && !BattleFormatsData[id]["unreleasedHidden"]) {
 				ret.push(ja);
 			}
@@ -271,7 +277,15 @@ function getMove(id) {
 			id = id.replace(/mega(x|y|)/,'');
 		}
 	}
-	learnset = BattleLearnsets[id]["learnset"];
+	learnset = {}
+	if (BattleLearnsets.hasOwnProperty(id)) {
+		$.extend(learnset, BattleLearnsets[id]["learnset"]);
+	}
+
+	if (BattlePokedex[id]["baseSpecies"]) {
+		id = toId(BattlePokedex[id]["baseSpecies"]);
+		$.extend(learnset, BattleLearnsets[id]["learnset"]);
+	}
 
 	while (BattlePokedex[id]["prevo"]) {
 		id = BattlePokedex[id]["prevo"];
