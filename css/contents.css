@@ -20,9 +20,15 @@ div.container { /*親要素*/
 	height: 100%;
 }
 div.header { 
-	height: 120px;
+	height: 80px;
 	width: 970px;
 	margin: auto;
+}
+
+div.header > p {
+	color: #d4d4d4;
+	text-align: center;
+	font-size: 3em
 }
 
 div.contents {
