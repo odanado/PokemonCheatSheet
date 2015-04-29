@@ -172,7 +172,7 @@ div.baseStats div.sum {
 div.line > div.overallTypeChart {
 	height: 4.5em;
 	width: 470px;
-	margin-left: 308px;
+	margin-left: 297px;
 }
 
 div.desc-line > div.overallTypeChart {
@@ -215,4 +215,9 @@ input[type="button"] {
 	float: left;
 	font-size: 1em;
 	width: 100px;
+}
+
+input.setting {
+	clear: both;
+	margin-top: 4px;
 }
