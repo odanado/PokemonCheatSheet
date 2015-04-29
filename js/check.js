@@ -120,7 +120,8 @@ function putOverallTypeChart(names) {
 
 	for (var key in weakness) {
 		if (weakness.hasOwnProperty(key)) {
-			ret += makeDivTag(weakness[key], obj, "&nbsp;&nbsp;");
+			var attr = "class=\"" + obj[weakness[key]] +"\"";
+			ret += makeDivTag(weakness[key], attr);
 		}
 	}
 	$(".overallTypeChart .weakness").html(ret);
@@ -128,7 +129,8 @@ function putOverallTypeChart(names) {
 
 	for (var key in strength) {
 		if (strength.hasOwnProperty(key)) {
-			ret += makeDivTag(strength[key], obj, "&nbsp;&nbsp;");
+			var attr = "class=\"" + obj[strength[key]] +"\"";
+			ret += makeDivTag(strength[key], attr);
 		}
 	}
 	$(".overallTypeChart .strength").html(ret);
@@ -136,19 +138,20 @@ function putOverallTypeChart(names) {
 
 	for (var key in invalid) {
 		if (invalid.hasOwnProperty(key)) {
-			ret += makeDivTag(invalid[key], obj, "&nbsp;&nbsp;");
+			var attr = "class=\"" + obj[invalid[key]] +"\"";
+			ret += makeDivTag(invalid[key], attr);
 		}
 	}
 	$(".overallTypeChart .invalid").html(ret);
 
 }
 
-function makeDivTag(val, obj, sp) {
+function makeDivTag(val, attr) {
 	var ret = "";
-	ret += "<div class=\"";
-	ret += obj[val];
-	ret += "\">";
-	ret += val + sp;
+	ret += "<div ";
+	ret += attr;
+	ret += ">";
+	ret += val;
 	ret += "</div>";
 
 	return ret;

@@ -171,19 +171,24 @@ div.baseStats div.sum {
 
 div.line > div.overallTypeChart {
 	height: 4.5em;
-	width: 470px;
-	margin-left: 297px;
+	width: 438px;
+	margin-left: 281px;
 }
 
 div.desc-line > div.overallTypeChart {
 	height: 1em;
-	margin-left: 453px;
+	margin-left: 436px;
 	color: #57d0d0;
 }
 
 div.desc-OverallTypeChart {
 	color: #57d0d0;
-	width: 50px;
+	width: 41px;
+}
+
+div.desc-line > div.overallTypeChart > div {
+	width: 22px;
+	text-align: center;
 }
 
 
@@ -194,21 +199,29 @@ div.overallTypeChart > div {
 .overallTypeChartColor0 {
 	color: #244e00;
 	float: left;
+	width: 22px;
+	text-align: center;
 }
 
 .overallTypeChartColor1 {
 	color: #baf72c;
 	float: left;
+	width: 22px;
+	text-align: center;
 }
 
 .overallTypeChartColor2 {
 	color: #fffa28;
 	float: left;
+	width: 22px;
+	text-align: center;
 }
 
 .overallTypeChartColor3 {
 	color: #e12727;
 	float: left;
+	width: 22px;
+	text-align: center;
 }
 
 input[type="button"] {
