@@ -211,7 +211,7 @@ div.overallTypeChart > div {
 	float: left;
 }
 
-.check {
+input[type="button"] {
 	float: left;
 	font-size: 1em;
 	width: 100px;

@@ -7,7 +7,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" type="text/css" href="./css/contents.css">
+<link rel="stylesheet" type="text/css" href="css/setting.css">
+
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+
+<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.structure.min.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.theme.min.css">
+
 
 <script>
 if (!window.exports) window.exports = window;
@@ -22,6 +29,7 @@ if (!window.exports) window.exports = window;
 
 <script type="text/javascript" src="js/dictionary.js"></script>
 <script type="text/javascript" src="js/check.js"></script>
+<script type="text/javascript" src="js/setting.js"></script>
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -45,7 +53,7 @@ ga('send', 'pageview');
 		<div class="contents">
 			<div class="desc-line clearfix">
 
-			<a href="dictionary.html" target="_blank">略称集</a>
+				<a href="dictionary.html" target="_blank">略称集</a>
 				<div class="types">タイプ</div>
 				<div class="abilities">特性</div>
 				<div class="moves">先遅換帰痺火挑ア</div>
@@ -72,7 +80,8 @@ ga('send', 'pageview');
 				<div class="overallTypeChart">無&nbsp;炎&nbsp;水&nbsp;電&nbsp;草&nbsp;氷&nbsp;闘&nbsp;毒&nbsp;地&nbsp;飛&nbsp;超&nbsp;虫&nbsp;岩&nbsp;霊&nbsp;龍&nbsp;悪&nbsp;鋼&nbsp;妖</div>
 			</div>
 			<div class="line clearfix">
-				<input type="button" class="check" value="チェック" onclick="submit()">
+				<input type="button" class="check" value="チェック" onclick="submit()"><br>
+				<input type="button" class="setting" value="設定" onclick="setting()">
 				<div class="overallTypeChart">
 					<div class="desc-OverallTypeChart clearfix">弱点<br>抵抗<br>無効</div>
 					<div class="weakness clearfix"></div>
@@ -80,6 +89,9 @@ ga('send', 'pageview');
 					<div class="invalid clearfix"></div>
 				</div>
 			</div>
+		</div>
+		<div class="settingDialog" style="display: none">
+			<input type="checkbox" class="chkCross" checked="checked">カロスマーク</input>
 		</div>
 
 		<div class="footer">

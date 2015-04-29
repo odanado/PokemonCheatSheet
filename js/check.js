@@ -1,5 +1,5 @@
 /*
-check.js
+PokemonCheatSheet
 
 Copyright (c) 2015 odan
 
@@ -20,6 +20,13 @@ jQuery v1.11.2
 jquery.org/license
 
 (c) 2005, 2014 jQuery Foundation, Inc.
+
+
+jQuery UI - v1.11.4
+
+http://jqueryui.com
+
+Copyright 2015 jQuery Foundation and other contributors; Licensed MIT
 
 */
 
@@ -293,6 +300,14 @@ function getMove(id) {
 	while (BattlePokedex[id]["prevo"]) {
 		id = BattlePokedex[id]["prevo"];
 		$.extend(learnset, BattleLearnsets[id]["learnset"]);
+	}
+
+	if ($(".chkCross").prop("checked")) {
+		Object.keys(learnset).map(function(key, index) {
+			if (learnset[key].length == 0) {
+				delete learnset[key];
+			}
+		});
 	}
 
 	var priorityMoves = ["aquajet", "bulletpunch", "extremespeed", "fakeout", "feint", "iceshard", "machpunch", "quickattack", "shadowsneak", "suckerpunch", "vacuumwave", "watershuriken"];
