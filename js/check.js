@@ -322,6 +322,12 @@ function getMove(id) {
 		}
 	}
 	if (ret.search("先") == -1) ret += makeDivTag("", "");
+	
+	if (learnset.hasOwnProperty("fakeout")) ret += makeDivTag("猫", "title=\"猫騙し\"");
+	else ret += makeDivTag("", "");
+	
+	if (learnset.hasOwnProperty("tailwind")) ret += makeDivTag("風", "title=\"追い風\"");
+	else ret += makeDivTag("", "");
 
 	if (learnset.hasOwnProperty("trickroom")) ret += makeDivTag("遅", "title=\"トリックルーム\"");
 	else ret += makeDivTag("", "");
@@ -332,7 +338,7 @@ function getMove(id) {
 	if (learnset.hasOwnProperty("voltswitch") || learnset.hasOwnProperty("uturn")) ret += makeDivTag("帰", "title=\"蜻蛉ルチェン\"");
 	else ret += makeDivTag("", "");
 
-	if (learnset.hasOwnProperty("thunderwave") || learnset.hasOwnProperty("glare")) ret += makeDivTag("麻", "title=\"麻痺系\"");
+	if (learnset.hasOwnProperty("thunderwave") || learnset.hasOwnProperty("glare")) ret += makeDivTag("痺", "title=\"麻痺系\"");
 	else ret += makeDivTag("", "");
 
 	if (learnset.hasOwnProperty("willowisp")) ret += makeDivTag("火", "title=\"鬼火\"");
@@ -340,8 +346,17 @@ function getMove(id) {
 
 	if (learnset.hasOwnProperty("taunt")) ret += makeDivTag("挑", "title=\"挑発\"");
 	else ret += makeDivTag("", "");
+	
+	if (learnset.hasOwnProperty("disable")) ret += makeDivTag("縛", "title=\"金縛り\"");
+	else ret += makeDivTag("", "");
 
 	if (learnset.hasOwnProperty("encore")) ret += makeDivTag("ア", "title=\"アンコール\"");
+	else ret += makeDivTag("", "");
+	
+	if (learnset.hasOwnProperty("quickguard")) ret += makeDivTag("ﾌｧ", "title=\"ファストガード\"");
+	else ret += makeDivTag("", "");
+	
+	if (learnset.hasOwnProperty("wideguard")) ret += makeDivTag("ワ", "title=\"ワイドガード\"");
 	else ret += makeDivTag("", "");
 
 	return ret;
