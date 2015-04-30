@@ -1,108 +1,122 @@
 <!DOCTYPE html>
-
-<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" type="text/css" href="./css/contents.css">
-<link rel="stylesheet" type="text/css" href="css/setting.css">
-
-<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-
-<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
-<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.structure.min.css">
-<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.theme.min.css">
-
-
-<script>
-if (!window.exports) window.exports = window;
-</script>
-
-<script type="text/javascript" src="Pokemon-Showdown/data/pokedex.js"></script>
-<script type="text/javascript" src="Pokemon-Showdown/data/learnsets-g6.js"></script>
-<script type="text/javascript" src="Pokemon-Showdown/data/moves.js"></script>
-<script type="text/javascript" src="Pokemon-Showdown/data/typechart.js"></script>
-<script type="text/javascript" src="Pokemon-Showdown/data/formats-data.js"></script>
-<script type="text/javascript" src="Pokemon-Showdown/data/abilities.js"></script>
-
-<script type="text/javascript" src="js/dictionary.js"></script>
-<script type="text/javascript" src="js/check.js"></script>
-<script type="text/javascript" src="js/setting.js"></script>
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-49269757-7', 'auto');
-ga('send', 'pageview');
-</script>
-
-
-<title>PokemonCheatSheet</title>
-</head>
-<body>
-	<div class="container">
-		<div class="header">
-			<p>PokemonCheatSheet</p>
-		</div>
-
-		<div class="contents">
-			<div class="desc-line clearfix">
-
-				<a href="dictionary.html" target="_blank">略称集</a>
-				<div class="types">タイプ</div>
-				<div class="abilities">特性</div>
-				<div class="moves">先遅換帰痺火挑ア</div>
-				<div class="weightDamages">重Dm</div>
+<html lang="ja">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./css/contents.css">
+		<link rel="stylesheet" type="text/css" href="css/setting.css">
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.structure.min.css">
+		<link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.theme.min.css">
+		<script>
+			if (!window.exports) window.exports = window;
+		</script>
+		<script type="text/javascript" src="Pokemon-Showdown/data/pokedex.js"></script>
+		<script type="text/javascript" src="Pokemon-Showdown/data/learnsets-g6.js"></script>
+		<script type="text/javascript" src="Pokemon-Showdown/data/moves.js"></script>
+		<script type="text/javascript" src="Pokemon-Showdown/data/typechart.js"></script>
+		<script type="text/javascript" src="Pokemon-Showdown/data/formats-data.js"></script>
+		<script type="text/javascript" src="Pokemon-Showdown/data/abilities.js"></script>
+		<script type="text/javascript" src="js/dictionary.js"></script>
+		<script type="text/javascript" src="js/check.js"></script>
+		<script type="text/javascript" src="js/setting.js"></script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			ga('create', 'UA-49269757-7', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<title>PokemonCheatSheet</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<p>PokemonCheatSheet</p>
 			</div>
-			<div class="line clearfix">
-				<textarea class="inputNames" rows="6" cols="12"></textarea>
-				<div class="types"></div>
-				<div class="abilities"></div>
-				<div class="moves"></div>
-				<div class="weightDamages"></div>
-			</div>
-			<div class="desc-line clearfix">
-				<div class="names"></div>
-				<div class="typeChart">無炎水電草氷闘毒地飛超虫岩霊龍悪鋼妖</div>
-				<div class="baseStats">&nbsp;&nbsp;&nbsp;HP&nbsp;&nbsp;&nbsp;攻撃&nbsp;&nbsp;防御&nbsp;&nbsp;特攻&nbsp;&nbsp;特防&nbsp;&nbsp;素早&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;合計</div>
-			</div>
-			<div class="line clearfix">
-				<div class="names"></div>
-				<div class="typeChart"></div>
-				<div class="baseStats"></div>
-			</div>
-			<div class="desc-line clearfix">
-				<div class="overallTypeChart">
-					<div>無</div><div>炎</div><div>水</div><div>電</div><div>草</div><div>氷</div><div>闘</div><div>毒</div><div>地</div><div>飛</div><div>超</div><div>虫</div><div>岩</div><div>霊</div><div>龍</div><div>悪</div><div>鋼</div><div>妖</div>
+			<div class="contents">
+				<div class="desc-line clearfix">
+					<a href="dictionary.html" target="_blank">略称集</a>
+					<div class="types">タイプ</div>
+					<div class="abilities">特性</div>
+					<div class="moves">
+						<div title="先制技">先</div>
+						<div title="トリックルーム">遅</div>
+						<div title="トリック系">換</div>
+						<div title="蜻蛉ルチェン">帰</div>
+						<div title="麻痺系">痺</div>
+						<div title="鬼火">火</div>
+						<div title="挑発">挑</div>
+						<div title="アンコール">ア</div>
+					</div>
+					<div class="weightDamages" title="体重依存技ダメージ">重Dm</div>
+				</div>
+				<div class="line clearfix">
+					<textarea class="inputNames" rows="6" cols="12"></textarea>
+					<div class="types"></div>
+					<div class="abilities"></div>
+					<div class="moves"></div>
+					<div class="weightDamages"></div>
+				</div>
+				<div class="desc-line clearfix">
+					<div class="names"></div>
+					<div class="typeChart">無炎水電草氷闘毒地飛超虫岩霊龍悪鋼妖</div>
+					<div class="baseStats">&nbsp;&nbsp;&nbsp;HP&nbsp;&nbsp;&nbsp;攻撃&nbsp;&nbsp;防御&nbsp;&nbsp;特攻&nbsp;&nbsp;特防&nbsp;&nbsp;素早&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;合計</div>
+				</div>
+				<div class="line clearfix">
+					<div class="names"></div>
+					<div class="typeChart"></div>
+					<div class="baseStats"></div>
+				</div>
+				<div class="desc-line clearfix">
+					<div class="overallTypeChart">
+						<div>無</div>
+						<div>炎</div>
+						<div>水</div>
+						<div>電</div>
+						<div>草</div>
+						<div>氷</div>
+						<div>闘</div>
+						<div>毒</div>
+						<div>地</div>
+						<div>飛</div>
+						<div>超</div>
+						<div>虫</div>
+						<div>岩</div>
+						<div>霊</div>
+						<div>龍</div>
+						<div>悪</div>
+						<div>鋼</div>
+						<div>妖</div>
+					</div>
+				</div>
+				<div class="line clearfix">
+					<div class="clearfix">
+						<input type="button" class="check" value="チェック" onclick="submit()">
+						<input type="button" class="setting" value="設定" onclick="setting()">
+					</div>
+					<div class="overallTypeChart">
+						<div class="desc-OverallTypeChart clearfix">弱点
+							<br>抵抗
+							<br>無効</div>
+						<div class="weakness clearfix"></div>
+						<div class="strength clearfix"></div>
+						<div class="invalid clearfix"></div>
+					</div>
 				</div>
 			</div>
-			<div class="line clearfix">
-				<div class="clearfix">
-					<input type="button" class="check" value="チェック" onclick="submit()">
-					<input type="button" class="setting" value="設定" onclick="setting()">
-				</div>
-				<div class="overallTypeChart">
-					<div class="desc-OverallTypeChart clearfix">弱点<br>抵抗<br>無効</div>
-					<div class="weakness clearfix"></div>
-					<div class="strength clearfix"></div>
-					<div class="invalid clearfix"></div>
-				</div>
+			<div class="settingDialog" style="display: none">
+				<input type="checkbox" class="chkCross" checked="checked">カロスマーク</input>
+			</div>
+			<div class="footer">
+				<p>Copyright © odan</p>
 			</div>
 		</div>
-		<div class="settingDialog" style="display: none">
-			<input type="checkbox" class="chkCross" checked="checked">カロスマーク</input>
-		</div>
-
-		<div class="footer">
-			<p>Copyright © odan</p>
-		</div>
-	</div>
-
-</body>
+	</body>
 
 </html>

@@ -290,7 +290,7 @@ function getMove(id) {
 			id = id.replace(/mega(x|y|)/,'');
 		}
 	}
-	learnset = {}
+	var learnset = {}
 	if (BattleLearnsets.hasOwnProperty(id)) {
 		$.extend(learnset, BattleLearnsets[id]["learnset"]);
 	}
@@ -317,32 +317,32 @@ function getMove(id) {
 
 	for (var i=0; i<priorityMoves.length; i++) {
 		if (learnset.hasOwnProperty(priorityMoves[i])) {
-			ret += "先";
+			ret += makeDivTag("先", "title=\"先制技\"");
 			break;
 		}
 	}
-	if (ret.search("先") == -1) ret += "　";
+	if (ret.search("先") == -1) ret += makeDivTag("", "");
 
-	if (learnset.hasOwnProperty("trickroom")) ret += "遅";
-	else ret += "　";
+	if (learnset.hasOwnProperty("trickroom")) ret += makeDivTag("遅", "title=\"トリックルーム\"");
+	else ret += makeDivTag("", "");
 
-	if (learnset.hasOwnProperty("trick") || learnset.hasOwnProperty("switcheroo")) ret += "換";
-	else ret += "　";
+	if (learnset.hasOwnProperty("trick") || learnset.hasOwnProperty("switcheroo")) ret += makeDivTag("換", "title=\"トリック系\"");
+	else ret += makeDivTag("", "");
 
-	if (learnset.hasOwnProperty("voltswitch") || learnset.hasOwnProperty("uturn")) ret += "帰";
-	else ret += "　";
+	if (learnset.hasOwnProperty("voltswitch") || learnset.hasOwnProperty("uturn")) ret += makeDivTag("帰", "title=\"蜻蛉ルチェン\"");
+	else ret += makeDivTag("", "");
 
-	if (learnset.hasOwnProperty("thunderwave") || learnset.hasOwnProperty("glare")) ret += "痺";
-	else ret += "　";
+	if (learnset.hasOwnProperty("thunderwave") || learnset.hasOwnProperty("glare")) ret += makeDivTag("麻", "title=\"麻痺系\"");
+	else ret += makeDivTag("", "");
 
-	if (learnset.hasOwnProperty("willowisp")) ret += "火";
-	else ret += "　";
+	if (learnset.hasOwnProperty("willowisp")) ret += makeDivTag("火", "title=\"鬼火\"");
+	else ret += makeDivTag("", "");
 
-	if (learnset.hasOwnProperty("taunt")) ret += "挑";
-	else ret += "　";
+	if (learnset.hasOwnProperty("taunt")) ret += makeDivTag("挑", "title=\"挑発\"");
+	else ret += makeDivTag("", "");
 
-	if (learnset.hasOwnProperty("encore")) ret += "ア";
-	else ret += "　";
+	if (learnset.hasOwnProperty("encore")) ret += makeDivTag("ア", "title=\"アンコール\"");
+	else ret += makeDivTag("", "");
 
 	return ret;
 }

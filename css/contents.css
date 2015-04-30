@@ -146,6 +146,13 @@ div.moves {
 	width: 180px;
 }
 
+div.moves > div {
+	height: 24px;
+	width: 17px;
+	text-align: center;
+	float: left;
+}
+
 div.weightDamages {
 	color: #d4d4d4;
 	width: 50px;
