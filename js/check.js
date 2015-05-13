@@ -190,7 +190,7 @@ function hasImmunity(ability, type) {
 	ability["heal"] = function(val) { return false; };
 	ability["boost"] = function(val) { return false; };
 	ability["add"] = function(val1, val2, val3) { ability["msg"] = val1; };
-	target["addVolatile"] = function(val) { return true; };
+	target["addVolatile"] = function(val) { return false; };
 	target["maxhp"] = 0;
 
 	if (ability.hasOwnProperty("onImmunity") && ability["onImmunity"](type) == false) return true;
