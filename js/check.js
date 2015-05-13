@@ -180,6 +180,26 @@ function getBaseStats(id) {
 	return ret;
 }
 
+function hasImmunity(ability, type) {
+	// TODO ヌケニンの処理を実装
+	if (ability["id"] == "wonderguard") return false;
+	var target = {};
+	var source = {};
+	var move = {"type": type};
+
+	ability["heal"] = function(val) { return false; };
+	ability["boost"] = function(val) { return false; };
+	ability["add"] = function(val1, val2, val3) { ability["msg"] = val1; };
+	target["addVolatile"] = function(val) { return true; };
+	target["maxhp"] = 0;
+
+	if (ability.hasOwnProperty("onImmunity") && ability["onImmunity"](type) == false) return true;
+	if (ability.hasOwnProperty("onTryHit") && ability["onTryHit"](target, source, move) === null && ability["msg"] == "-immune") {
+		 return true;
+	}
+	return false;
+}
+
 function getEffect(id) {
 	var sortedTypes = ["Normal","Fire","Water","Electric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Rock","Ghost","Dragon","Dark","Steel","Fairy"];
 
@@ -214,7 +234,7 @@ function getEffect(id) {
 				if (key != "H" || key == "H" && !BattleFormatsData[id]["unreleasedHidden"]) {
 
 					var ability = BattleAbilities[toId(abilities[key])];
-					if (ability.hasOwnProperty("onImmunity") && ability["onImmunity"](sortedType) == false) {
+					if (hasImmunity(ability, sortedType)) {
 						effects[sortedType] = 0;
 					}
 				}
