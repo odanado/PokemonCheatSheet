@@ -197,9 +197,16 @@ function getEffect(id) {
 			var damageTaken = BattleTypeChart[types[j]]["damageTaken"];
 			if(typeof effects[sortedType] === "undefined") effects[sortedType] = 1;
 
-			if (damageTaken[sortedType] == 1) effects[sortedType] *= 2;
-			if (damageTaken[sortedType] == 2) effects[sortedType] /= 2;
-			if (damageTaken[sortedType] == 3) effects[sortedType] =  0;
+			if ($(".chkSakasa").prop("checked")) {
+				if (damageTaken[sortedType] == 1) effects[sortedType] /= 2;
+				if (damageTaken[sortedType] == 2) effects[sortedType] *= 2;
+				if (damageTaken[sortedType] == 3) effects[sortedType] *= 2;
+			}
+			else {
+				if (damageTaken[sortedType] == 1) effects[sortedType] *= 2;
+				if (damageTaken[sortedType] == 2) effects[sortedType] /= 2;
+				if (damageTaken[sortedType] == 3) effects[sortedType] =  0;
+			}
 		}
 
 		for (var key in abilities) {
