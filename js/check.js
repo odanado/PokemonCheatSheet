@@ -192,6 +192,8 @@ function hasImmunity(ability, type) {
 	ability["add"] = function(val1, val2, val3) { ability["msg"] = val1; };
 	target["addVolatile"] = function(val) { return false; };
 	target["maxhp"] = 0;
+	move["flags"] = {};
+	move["flags"]["reflectable"] = null;
 
 	if (ability.hasOwnProperty("onImmunity") && ability["onImmunity"](type) == false) return true;
 	if (ability.hasOwnProperty("onTryHit") && ability["onTryHit"](target, source, move) === null && ability["msg"] == "-immune") {
